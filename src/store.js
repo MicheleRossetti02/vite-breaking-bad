@@ -1,5 +1,10 @@
 import { reactive } from 'vue'
 export const store = reactive({
+    API_URL: "https://www.breakingbadapi.com/api/characters",
+    characters: null,
+})
+
+/*export const store = reactive({
     data() {
         return {
             API_URL: "https://www.breakingbadapi.com/api/characters",
@@ -24,4 +29,4 @@ export const store = reactive({
         this.callApi(this.API_URL);
     },
 
-})
+})*/

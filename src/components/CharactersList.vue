@@ -1,16 +1,7 @@
 <script >
 
-import { store } from '../store.js'
 
-export default {
-    components: 'CharactersList',
 
-    data() {
-        return {
-            store,
-        }
-    },
-}
 
 
 </script>
