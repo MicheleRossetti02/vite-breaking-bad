@@ -44,14 +44,16 @@ export default {
         })
     },
     searchSeries() {
-      const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
-      this.store.API_URL = categoryUrl + this.store.searchText
-      console.log(this.store.searchText);
-      axios.get(categoryUrl + this.store.searchText)
-        .then(response => {
-          this.store.characters = response.data
-          this.store.loading = false
-        })
+
+      //   // const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
+      //   // this.store.API_URL = categoryUrl + this.store.searchText
+      console.log('cerco ' + this.store.searchText);
+
+      //   // axios.get(categoryUrl + this.store.searchText)
+      //   //   .then(response => {
+      //   //     this.store.characters = response.data
+      //   //     this.store.loading = false
+      //   //   })
 
 
     },
@@ -69,7 +71,7 @@ export default {
 <template>
   <div class="container">
     <AppHeader />
-    <SelectBox />
+    <SelectBox @searchData="searchSeries" />
 
     <AppMain />
 

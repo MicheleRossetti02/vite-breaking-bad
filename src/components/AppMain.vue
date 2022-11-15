@@ -1,16 +1,16 @@
 <script>
 // import CharactersList from "./components/CharactersList.vue";
 
-import SelectBox from './SelectBox.vue'
+
 import CharacterList from './CharacterList.vue';
-import axios from "axios";
+// import axios from "axios";
 
 
 export default {
     name: "AppMain",
     components: {
         CharacterList,
-        SelectBox,
+
     },
 
 }
