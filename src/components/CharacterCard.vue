@@ -1,11 +1,11 @@
 <script>
-
 export default {
 
     name: 'CharacterCard',
     props: {
-        character: Object
-    }
+        characters: Object
+    },
+
 }
 
 </script>
@@ -22,7 +22,7 @@ export default {
                 <p><strong>{{ character.status }}</strong></p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 </template>

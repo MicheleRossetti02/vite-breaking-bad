@@ -1,6 +1,6 @@
 <script>
 import CharacterCard from './CharacterCard.vue'
-import { store } from '../store'
+import { store } from '../store.js'
 
 export default {
     name: 'CharacterList',
@@ -10,7 +10,7 @@ export default {
     },
     data() {
         return {
-            store
+            store,
         }
     }
 }

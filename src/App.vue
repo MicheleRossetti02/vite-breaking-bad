@@ -1,9 +1,9 @@
 <script >
-// import axios from "axios";
-// import { store } from './store'
-import { store } from './store'
+
+import axios from "axios";
+import { store } from './store.js';
 import AppHeader from "./components/AppHeader.vue";
-import AppMain from './components/AppMain.vue'
+import AppMain from './components/AppMain.vue';
 import AppFooter from "./components/AppFooter.vue";
 import SelectBox from './components/SelectBox.vue';
 
@@ -27,7 +27,6 @@ export default {
   data() {
     return {
       store,
-
     }
   },
   methods: {
@@ -35,7 +34,7 @@ export default {
       axios.get(url)
         .then(response => {
           this.store.characters = response.data
-          this.store.loading = false
+          // this.store.loading = false
           console.log(store.characters);
 
         })
@@ -71,6 +70,7 @@ export default {
 <template>
   <div class="container">
     <AppHeader />
+
     <SelectBox @searchData="searchSeries" />
 
     <AppMain />
