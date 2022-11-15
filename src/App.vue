@@ -1,34 +1,26 @@
 <script >
-import axios from "axios";
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-// import CharactersList from './components/CharactersList.vue';
-import { store } from './store.js'
+// import axios from "axios";
+// import { store } from './store'
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from './components/AppMain.vue'
+import AppFooter from "./components/AppFooter.vue";
+
 export default {
   name: 'App',
+  components: {
+    AppHeader,
+    AppMain,
+    AppFooter
+  },
   // components: {
   //   CharactersList
   // },
+  // data() {
+  //   return {
+  //     store,
 
-  data() {
-    return {
-      store,
-
-    }
-  },
-  methods: {
-    callApi(url) {
-      axios.get(url)
-        .then(response => {
-          this.store.characters = response.data
-          console.log(store.characters);
-
-        })
-    }
-  },
-  mounted() {
-    this.callApi(this.store.API_URL)
-  }
+  //   }
+  // },
 
 
 }
@@ -37,30 +29,20 @@ export default {
 </script>
 
 <template>
-
   <div class="container">
-    <div class="row row-cols-md-5">
-      <div class="col" v-for="character in store.characters">
-        <div class="character text-center">
-          <img :src="character.img" alt="" class="">
-          <h3>{{ character.name }}</h3>
-          <div class="category">
-            <p class="m-0">{{ character.category }}</p>
-          </div>
-          <div class="status">
-            <p>{{ character.status }}</p>
-          </div>
-        </div>
-      </div>
-      <!-- <CharactersList>
+    <AppHeader />
 
-      </CharactersList> -->
+    <AppMain />
+
+    <AppFooter />
+
+  </div>
+
 
 </template>
 
-<style scoped>
-img {
-  width: 100%;
 
-}
+
+<style scoped>
+
 </style>
