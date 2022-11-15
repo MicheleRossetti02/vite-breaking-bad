@@ -56,8 +56,6 @@ export default {
 
       </CharactersList> -->
 
-    </div>
-  </div>
 </template>
 
 <style scoped>
