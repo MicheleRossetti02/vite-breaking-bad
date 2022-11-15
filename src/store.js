@@ -3,6 +3,7 @@ export const store = reactive({
     API_URL: "https://www.breakingbadapi.com/api/characters",
     characters: null,
     loading: true,
+    searchText: ''
 })
 
 /*export const store = reactive({

@@ -1,16 +1,19 @@
 <script >
 // import axios from "axios";
 // import { store } from './store'
+import { store } from './store'
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from './components/AppMain.vue'
 import AppFooter from "./components/AppFooter.vue";
+import SelectBox from './components/SelectBox.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
+    SelectBox
   },
   // components: {
   //   CharactersList
@@ -21,7 +24,42 @@ export default {
 
   //   }
   // },
+  data() {
+    return {
+      store,
 
+    }
+  },
+  methods: {
+    callApi(url) {
+      axios.get(url)
+        .then(response => {
+          this.store.characters = response.data
+          this.store.loading = false
+          console.log(store.characters);
+
+        })
+        .catch(err => {
+          console.log(err.message);
+        })
+    },
+    searchSeries() {
+      const categoryUrl = 'https://www.breakingbadapi.com/api/characters?category='
+      this.store.API_URL = categoryUrl + this.store.searchText
+      console.log(this.store.searchText);
+      axios.get(categoryUrl + this.store.searchText)
+        .then(response => {
+          this.store.characters = response.data
+          this.store.loading = false
+        })
+
+
+    },
+    mounted() {
+      this.callApi(this.store.API_URL)
+    }
+
+  }
 
 }
 
@@ -31,6 +69,7 @@ export default {
 <template>
   <div class="container">
     <AppHeader />
+    <SelectBox />
 
     <AppMain />
 

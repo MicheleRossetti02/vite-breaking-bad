@@ -1,9 +1,17 @@
 <script>
+import { store } from '../store'
 import SelectBox from './SelectBox.vue';
 
 export default {
     name: "AppHeader",
-    components: { SelectBox }
+    components: { SelectBox },
+    data() {
+        return {
+            store,
+
+        }
+    },
+
 }
 
 </script>
@@ -18,12 +26,6 @@ export default {
         <h1 class="m-0 ps-4">Breaking Bad Api</h1>
     </div>
 
-
-    <div class="select_category">
-
-        <SelectBox />
-
-    </div>
 
 
 

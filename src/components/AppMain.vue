@@ -1,6 +1,7 @@
 <script>
 // import CharactersList from "./components/CharactersList.vue";
-import { store } from '../store'
+
+import SelectBox from './SelectBox.vue'
 import CharacterList from './CharacterList.vue';
 import axios from "axios";
 
@@ -9,30 +10,8 @@ export default {
     name: "AppMain",
     components: {
         CharacterList,
+        SelectBox,
     },
-    data() {
-        return {
-            store,
-
-        }
-    },
-    methods: {
-        callApi(url) {
-            axios.get(url)
-                .then(response => {
-                    this.store.characters = response.data
-                    this.store.loading = false
-                    console.log(store.characters);
-
-                })
-                .catch(err => {
-                    console.log(err.message);
-                })
-        }
-    },
-    mounted() {
-        this.callApi(this.store.API_URL)
-    }
 
 }
 </script>
