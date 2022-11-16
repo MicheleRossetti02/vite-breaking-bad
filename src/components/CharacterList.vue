@@ -12,17 +12,19 @@ export default {
         return {
             store,
         }
+    },
+    mounted() {
+        console.log(this.store)
     }
+
 }
 </script>
 <template>
 
-    <div class="alert mt-3 ">
-        <strong>62 </strong> character found
-    </div>
     <div class=" row row-cols-5">
         <CharacterCard :character="character" v-for="character in store.characters"></CharacterCard>
     </div>
+
 </template>
 
 <style scoped>

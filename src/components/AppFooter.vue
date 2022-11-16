@@ -19,7 +19,7 @@ export default {
 <template>
 
     <footer>
-        <p v-if="store.characters !== null">Results: {{ totalResults }} </p>
+        <p v-if="store.characters !== null">Results: {{ store.characters.length }} </p>
     </footer>
 
 </template>

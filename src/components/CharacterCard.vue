@@ -3,7 +3,7 @@ export default {
 
     name: 'CharacterCard',
     props: {
-        characters: Object
+        character: Object
     },
 
 }
@@ -11,6 +11,7 @@ export default {
 </script>
 
 <template>
+
     <div class="col my-2 ">
         <div class="character text-center card bg-dark h-100 p-2 ">
             <img :src="character.img" alt="" class="">
@@ -22,7 +23,7 @@ export default {
                 <p><strong>{{ character.status }}</strong></p>
             </div>
         </div>
-    </div> -->
+    </div>
 
 
 </template>

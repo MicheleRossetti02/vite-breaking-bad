@@ -1,4 +1,4 @@
-<script >
+<script>
 
 import axios from "axios";
 import { store } from './store.js';
@@ -15,15 +15,7 @@ export default {
     AppFooter,
     SelectBox
   },
-  // components: {
-  //   CharactersList
-  // },
-  // data() {
-  //   return {
-  //     store,
 
-  //   }
-  // },
   data() {
     return {
       store,
@@ -31,11 +23,12 @@ export default {
   },
   methods: {
     callApi(url) {
+      console.log(url);
       axios.get(url)
         .then(response => {
+          console.log(response);
           this.store.characters = response.data
-          // this.store.loading = false
-          console.log(store.characters);
+          this.store.loading = false
 
         })
         .catch(err => {
@@ -56,10 +49,10 @@ export default {
 
 
     },
-    mounted() {
-      this.callApi(this.store.API_URL)
-    }
 
+  },
+  mounted() {
+    this.callApi(this.store.API_URL)
   }
 
 }

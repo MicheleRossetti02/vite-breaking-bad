@@ -21,6 +21,9 @@ export default {
         <!-- <h5>Found {{ store.characters.length }} characters</h5> -->
         <div class="characters_list p-3">
 
+            <div class="alert bg-dark ">
+                <strong>62 </strong> character found
+            </div>
 
             <CharacterList> </CharacterList>
         </div>
