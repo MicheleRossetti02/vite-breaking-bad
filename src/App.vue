@@ -23,11 +23,12 @@ export default {
   },
   methods: {
     callApi(url) {
-      console.log(url);
+      // console.log(url);
       axios.get(url)
         .then(response => {
-          console.log(response);
-          this.store.characters = response.data
+          console.log(response.data.results);
+          this.store.characters = response.data.results
+          // console.log(response.data.data);
           this.store.loading = false
 
         })
